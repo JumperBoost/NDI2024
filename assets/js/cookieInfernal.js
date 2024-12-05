@@ -6,7 +6,7 @@ const maxEscapes = Math.random() * 10 + 4;
 console.log(maxEscapes);
 
 
-button.addEventListener("mouseover", () => {
+button.addEventListener("mouseover" || "click", () => {
     if (escapeCount < maxEscapes) {
         moveButtonWithinContainer();
         escapeCount++;
