@@ -13,4 +13,9 @@ class MainController extends AbstractController {
     public function index(): Response {
         return $this->render('home.html.twig');
     }
+
+    #[Route('/cookie')]
+    public function cookie(): Response {
+        return $this->render('pageCookie.html.twig');
+    }
 }

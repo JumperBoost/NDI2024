@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block titre %}Nuit de l'info 2024 - Défi Cookie Infernal et simplifier pour mieux vivre{% endblock %}
+
+{% block body %}
+    <p>Cookie!</p>
+    <label for="input_id">Input your name</label>
+    <input type="text" id="input_id">
+    <div id="test"></div>
+    <script src="{{ asset('js/cookie.js') }}"></script>
+{% endblock %}
+
