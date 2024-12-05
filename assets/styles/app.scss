@@ -9,3 +9,8 @@ body {
 main {
     margin: 10px;
 }
+
+#fleeButtonTest {
+    transition : transform 0.5s;
+    //transform: rotate(360deg);
+}
