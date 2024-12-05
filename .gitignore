@@ -23,3 +23,12 @@
 /public/assets/
 /assets/vendor/
 ###< symfony/asset-mapper ###
+
+# Jetbrains
+.idea/
+
+# Composer
+composer.lock
+
+# SCSS
+assets/styles/*.css*
