@@ -3,9 +3,27 @@
 {% block titre %}Nuit de l'info 2024 - Défi Cookie Infernal et simplifier pour mieux vivre{% endblock %}
 
 {% block body %}
-    <p>Cookie!</p>
-    <label for="input_id">Input your name</label>
-    <input type="text" id="input_id">
+    <div id="container">
+        <div class="chat-bubble" id="ghost-bubble"></div>
+        <input id="input_id" type="text" placeholder="Type a message">
+        <div class="ghost">
+            <div class="ghost__face">
+                <div class="ghost__eyes">
+                    <div class="ghost__eyes-l"></div>
+                    <div class="ghost__eyes-r"></div>
+                </div>
+                <div class="ghost__mouth"></div>
+            </div>
+            <div class="ghost__torso"></div>
+            <div class="ghost__hands">
+                <div class="ghost__hands-l"></div>
+                <div class="ghost__hands-r"></div>
+            </div>
+            <div class="ghost__legs"></div>
+        </div>
+    </div>
+
+    <link rel="stylesheet" href="{{ asset('styles/cookie.css') }}">
     <script src="{{ asset('js/cookie.js') }}"></script>
 {% endblock %}
 

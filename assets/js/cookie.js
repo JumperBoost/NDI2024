@@ -30,8 +30,29 @@ function generateRandomChance(){
 function generateRandomChar (){
     let result = '';
     const characters = 'azertyuiopqsdfghjklmwxcvbnAZERTYUIOPQSDFGHJKLMWXCVBN1234567890&é-è_çà=*!:;,?./§';
-    // Loop to generate characters for the specified length
     const randomInd = Math.floor(Math.random() * characters.length);
     result += characters.charAt(randomInd);
     return result;
 }
+
+const input = document.getElementById('input_id');
+const bubble = document.getElementById('ghost-bubble');
+
+const mouth = document.querySelector('.ghost__mouth');
+
+input.onkeydown = (e) => {
+    if (e.keyCode === 13) {
+        bubble.innerText = e.target.value;
+        e.target.value = '';
+
+        // mouth chatter
+        let i = 0;
+        if (mouthChatter) clearInterval(mouthChatter);
+
+        const mouthChatter = setInterval(() => {
+            mouth.classList.toggle('ghost__mouth--open');
+            if (i === 6) clearInterval(mouthChatter);
+            i++;
+        }, 300);
+    }
+};
