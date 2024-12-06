@@ -74,3 +74,11 @@ function generateH1(){
     document.getElementById("h1").innerHTML = liste[random];
 }
 generateH1();
+
+const refreshButton = document.getElementById("fleeButtonAccepter");
+
+const refreshPage = () => {
+    generateH1();
+}
+
+refreshButton.addEventListener('click', refreshPage)
