@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Nuit de l'info 2024{% endblock %}</title>
+        <link rel="icon" href="{{ asset('img/logo.png') }}">
         <link rel="stylesheet" href="{{ asset('styles/app.css') }}">
         <link rel="stylesheet" href="{{ asset('styles/bubble.css') }}">
         <link rel="stylesheet" href="{{ asset('styles/text.css') }}">
@@ -18,7 +19,7 @@
         <main>
             {% block body %}
                 {% block body2 %}{% endblock %}
-                <div id="chatbot" class="container row flex-column align-items-center">
+                <div id="chatbot" class="row flex-column align-items-center">
                     <div id="chatbot-img">
                         <img src="{{ asset('img/attendre.gif') }}">
                     </div>
@@ -26,7 +27,9 @@
                         <h2 class="margin-none">Assistant chat</h2>
                         <div id="chatbot-status" class="label-red">Non connecté</div>
                     </div>
-                    <div id="chatbot-msg"></div>
+                    <div id="chatbot-msg">
+
+                    </div>
                     <div id="chatbot-inputs" class="d-flex align-items-center">
                         <textarea placeholder="Entrez votre question" disabled></textarea>
                         <input type="submit" value="" alt="Envoyer" onclick="envoyerPromptChatbot()" disabled>

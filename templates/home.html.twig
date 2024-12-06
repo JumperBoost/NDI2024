@@ -5,13 +5,14 @@
 {% block titre %}Page d'accueil — Nuit de l'info 2024{% endblock %}
 
 {% block body %}
+    {{ parent() }}
     <div id="containerAbove">
         <div id="aboveTheOcean">
             <canvas id="canvas">
 
             </canvas>
             <div id="title">
-                <h1 id="title">Ocean</h1>
+                <img id="title" src="{{ asset('img/logo.png') }}" alt="Logo">
             </div>
         </div>
         <div id="wrapper"></div>

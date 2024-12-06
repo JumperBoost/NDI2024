@@ -275,7 +275,7 @@ footer {
     bottom: 50px;
     background-color: #27272a;
     color: white;
-    max-width: 430px;
+    width: 430px;
     transition: all 1s ease-out;
     &.deroule {
         right: 10px;
@@ -395,4 +395,8 @@ footer {
 #chatbot-visibility-btn > input[type='checkbox']:checked + label img {
     rotate: 180deg;
     transition: all 1s ease-out;
+}
+
+#chatbot, #chatbot-visibility-btn {
+    z-index: 5;
 }

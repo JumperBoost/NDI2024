@@ -66,6 +66,12 @@ function envoyerPromptChatbot() {
             url: api_url + "request?prompt=" + encodeURI(textarea_element.value),
             success: function (result) {
                 ajouterMessageServeur(result);
+            },
+            error: function (result) {
+                console.log(result);
+                if(result.status === 404)
+                    ajouterMessageServeur("Désolé, je n'ai pas compris votre demande.");
+                else ajouterMessageServeur("Une erreur est survenue lors du traitement de votre demande.");
             }
         });
         textarea_element.value = "";

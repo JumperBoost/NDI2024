@@ -8,7 +8,7 @@ startTimer();
 
 function startTimer(interval = 1000) {
     timer = setInterval(function () {
-        blurValue = "blur("+Math.abs(gaussianRandom(0, 3))+"px)";
+        blurValue = "blur("+Math.abs(gaussianRandom(0, 2))+"px)";
         aboveTheOcean.style.filter = blurValue;
     }, interval);
 }
