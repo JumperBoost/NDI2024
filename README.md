@@ -136,6 +136,8 @@ L'organisation du dépôt se fait sous l'architecture [MVC](https://fr.wikipedia
 ___
 **Lien vers la page: https://ndi2024.jumperboost.fr/**
 
+**Lien vers le dépôt du serveur Chatbot : https://github.com/JumperBoost/ndi2024-chatbot**
+
 Documentation Symfony: https://symfony.com/doc/current/index.html
 
 Documentation Twig: https://twig.symfony.com/doc/3.x/
