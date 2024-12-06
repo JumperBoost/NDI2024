@@ -67,6 +67,7 @@ function handleCollisions() {
             score++;
             console.log(score);
             if (score === 80){
+                createSprites();
                 aGagne();
             }
         }
@@ -78,4 +79,20 @@ setInterval(handleCollisions, 50);
 
 function aGagne(){
     alert("Vous avez gagné ! Vous avez ramassé un total de " + nbCanettes + " canettes")
+}
+
+function createSprite(containerSprite){
+    const sprite = document.createElement("div");
+    sprite.style.left = Math.round(Math.random() * 100) + "%"; // Random horizontal start
+    sprite.style.top = Math.round(Math.random() * 100) + "%"; // Set random X for translation
+    sprite.classList.add("sprite");
+    containerSprite.appendChild(sprite);
+}
+
+function createSprites() {
+    const containerSprite = document.getElementById("container-sprite");
+    console.log("createSprites appelé")
+    while (containerSprite.children.length < 10) {
+        createSprite(containerSprite);
+    }
 }
