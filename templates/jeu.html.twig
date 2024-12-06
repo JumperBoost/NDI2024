@@ -8,14 +8,9 @@
         {% block javascripts %}{% endblock %}
     </head>
     <body>
-        <header>
-
-        </header>
-        <main>
-            {% block body %}{% endblock %}
-        </main>
-        <footer>
-
-        </footer>
+        <img src="{{ asset('img/katamaran.png') }}" alt="un bateau" id="bateau">
+        <div id="container"></div>
+        <script src="{{ asset('js/jeu.js') }}"></script>
     </body>
+
 </html>
