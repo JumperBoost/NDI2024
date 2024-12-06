@@ -4,7 +4,16 @@ $bg: #333;
   font-size: 20px;
   font-family: 'Chivo', Arial, sans-serif;
 }
+#rr{
+  height: auto;
+  width: auto;
+}
 
+#group{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 h1 {
   position: absolute;
   padding-top: 20vh;

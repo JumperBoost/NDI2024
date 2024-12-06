@@ -4,29 +4,46 @@
 
 {% block body %}
     <h1 id="h1"></h1>
-    <div id="container">
-        <div class="chat-bubble" id="ghost-bubble"></div>
-        <label for="input_id"></label>
-        <input id="input_id" type="text" placeholder="Écrivez votre réponse">
-        <div class="ghost">
-            <div class="ghost__face">
-                <div class="ghost__eyes">
-                    <div class="ghost__eyes-l"></div>
-                    <div class="ghost__eyes-r"></div>
+
+    <div id="rr">
+
+
+        <div id="group">
+            <div id="container">
+                <div class="chat-bubble" id="ghost-bubble"></div>
+                <label for="input_id"></label>
+                <input id="input_id" type="text" placeholder="Écrivez votre réponse">
+                <div class="ghost">
+                    <div class="ghost__face">
+                        <div class="ghost__eyes">
+                            <div class="ghost__eyes-l"></div>
+                            <div class="ghost__eyes-r"></div>
+                        </div>
+                        <div class="ghost__mouth"></div>
+                    </div>
+                    <div class="ghost__torso"></div>
+                    <div class="ghost__hands">
+                        <div class="ghost__hands-l"></div>
+                        <div class="ghost__hands-r"></div>
+                    </div>
+                    <div class="ghost__legs"></div>
                 </div>
-                <div class="ghost__mouth"></div>
+
             </div>
-            <div class="ghost__torso"></div>
-            <div class="ghost__hands">
-                <div class="ghost__hands-l"></div>
-                <div class="ghost__hands-r"></div>
+            <div id="test">
+                <br>
+                <button id="fleeButtonTest" class="fleeButton">Accepter</button>
+                <button id="fleeButtonAccepter" class="fleeButton">Refuser</button>
             </div>
-            <div class="ghost__legs"></div>
         </div>
     </div>
 
+
+
+
+
     <link rel="stylesheet" href="{{ asset('styles/cookie.css') }}">
     <script src="{{ asset('js/cookie.js') }}"></script>
+    <script src="{{ asset('js/cookieInfernal.js') }}"></script>
 {% endblock %}
-
 
