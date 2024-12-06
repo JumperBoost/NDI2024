@@ -1,0 +1,63 @@
+body, html{
+    height: 100%;
+    font-family: Helvetica, 'sans-serif';
+    margin: 0;
+}
+
+main{
+    margin: 0px;
+}
+
+#rateDiv, #volDiv, #timeDiv{
+    width: calc(100% / 3);
+    height: 100vh;
+    float: left;
+}
+
+#rateDiv{
+}
+
+#volDiv{
+}
+
+#timeDiv{
+}
+
+#player{
+    width: 100%;
+    height: 12.5%;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    background-color: lightyellow;
+    text-align: center;
+}
+
+#play, #pause, #stop{
+    display: inline-block;
+}
+
+#play-text, #pause-text, #stop-text{
+    line-height: 12.5vh;
+    font-size: 1.5em;
+}
+
+#play-text:hover, #pause-text:hover, #stop-text:hover{
+    font-style: italic;
+    font-weight: bold;
+    background-color: black;
+    color: white;
+}
+
+#play-text, #pause-text{
+    margin-right: 2em;
+}
+
+#pb-time{
+    width: 25px;
+    height: 25px;
+    background-color: black;
+    border-radius: 50%;
+    position: fixed;
+    bottom: calc(12.5% - 12.5px);
+}
