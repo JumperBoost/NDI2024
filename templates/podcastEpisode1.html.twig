@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block titre %}Page d'accueil — Nuit de l'info 2024{% endblock %}
+
+{% block body %}
+    <audio onratechange="updateRate()" onvolumechange="updateVol()" ontimeupdate="updateTime()" id="bg" loop preload="auto">
+        <source src="{{ asset('sound/podcast/episode1.mp3') }}" type="audio/mp3">
+    </audio>
+    <div onclick="changeRate()" id="rateDiv"><h1 id="rateDisplay">Playback Rate:<br><span id="rateVal">1</span></h1></div>
+    <div onclick="changeVol()" id="volDiv"><h1 id="volDisplay">Volume:<br><span id="volVal">1</span></h1></div>
+    <div onclick="changeTime()" id="timeDiv"><h1 id="timeDisplay">Time:<br><span id="timeVal">0</span></h1></div>
+    <div id="player">
+        <div id="pb-time"></div>
+        <div id="play" onclick="playAudio()"><span id="play-text">PLAY</span></div>
+        <div id="pause" onclick="pauseAudio()"><span id="pause-text">PAUSE</span></div>
+        <div id="stop" onclick="stopAudio()"><span id="stop-text">STOP</span></div>
+    </div>
+    <link rel="stylesheet" href="{{ asset('styles/podcast.css') }}">
+    <script src="{{ asset('js/podcast.js') }}"></script>
+{% endblock %}

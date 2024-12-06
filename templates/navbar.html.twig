@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-dark justify-content-start">
+    <a class="navbar-brand" href="/jeu">Jeu</a>
+    <a class="navbar-brand" href="/">Coeur</a>
+    <a class="navbar-brand" href="/cookie">Quiz</a>
+    <a class="navbar-brand" href="/podcast">Podcast</a>
+    <button id="test" type="button" class="btn btn-primary" onclick="changerFond8bit()">8-bit</button>
+</nav>
+<script>
+    function changerFond8bit() {
+        const belowTheOcean = document.getElementById("aboveTheOcean");
+        if (!is8bit) {
+            belowTheOcean.style.backgroundImage = "url({{ asset('img/bg/spriteEAU.gif') }})";
+            belowTheOcean.style.backgroundSize = "auto";
+            stopTimer();
+            is8bit = true;
+        } else {
+            belowTheOcean.style.backgroundImage = "url({{ asset('img/bg/Horizon.jpeg') }})";
+            belowTheOcean.style.backgroundSize = "cover";
+            is8bit = false;
+            startTimer();
+        }
+    }
+</script>

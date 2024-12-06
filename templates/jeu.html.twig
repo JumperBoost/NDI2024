@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Nuit de l'info 2024{% endblock %}</title>
+        <link rel="stylesheet" href="{{ asset('styles/jeu.css') }}">
+        <link rel="stylesheet" href="{{ asset('styles/app.css') }}">
+
+        {% block stylesheets %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </head>
+    <body>
+    <header id="wootah" style="display: none">{{ include('navbar.html.twig') }}</header>
+        <img src="{{ asset('img/katamaran.gif') }}" alt="un bateau" id="bateau">
+        <div id="container"></div>
+        <div id="container-fish"></div>
+        <div id="container-sprite"></div>
+        <script src="{{ asset('js/jeu.js') }}"></script>
+    </body>
+</html>

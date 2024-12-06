@@ -1,13 +1,271 @@
 // Bootstrap
 @import "../../vendor/twbs/bootstrap/scss/bootstrap";
+@font-face {
+    font-family: Salty Ocean;
+    src: url("../font/Salty Ocean.ttf");
+}
 
-body {
-    background-color: skyblue;
+$backgroundSurface : rgba(69, 69, 157, 0.8);
+$backgroundFond : rgba(25, 25, 76, 0.82);
+$backgroundCarte : rgba(0, 0, 0, 0.66);
+
+body{
     font-size: 18px;
 }
 
-main {
-    margin: 10px;
+main{
+    min-height: 90vh;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
+html, body {
+    width: 100% !important;
+    height: fit-content;
+    margin: 0;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    scroll-padding-top: 10vh;
+}
+
+header {
+    height: fit-content;
+    z-index: 3;
+    position: sticky;
+    top: 0;
+}
+
+footer {
+    height: 10vh;
+    background-color: black;
+    scroll-snap-align: end;
+}
+
+#canvas {
+    width: 100% !important;
+    height: 100% !important;
+    position: absolute;
+    margin: 0;
+}
+
+
+.navbar {
+    height: 10vh;
+}
+
+.navbar-brand {
+    color: skyblue;
+}
+
+#wrapper {
+    position: absolute;
+    top: 0;
+    pointer-events: none;
+}
+
+#menu {
+    width: 100%;
+}
+
+
+#containerAbove {
+    position: relative;
+    height: 90vh;
+}
+
+
+#aboveTheOcean {
+    height: 100%;
+    background-image: url("../img/bg/Horizon.jpeg");
+    background-position: center center;
+    filter: blur(0px);
+    transition: all 2s ease-in-out;
+    background-size: cover;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    overflow: hidden;
+}
+
+#title {
+    display: block;
+    border-radius: 100px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    align-content: center;
+    font-size: 12rem;
+    background: -webkit-linear-gradient(#c24444, #1949cc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: "Salty Ocean", Arial, sans-serif;
+    z-index: -1;
+    transition: 0.5s ease-in-out;
+}
+
+#title {
+    animation: 2s titleDance linear infinite;
+}
+
+@keyframes titleDance {
+    0% {
+        font-size: 10rem;
+    }
+    20% {
+        font-size: 12rem;
+    }
+    40% {
+        font-size: 10rem;
+    }
+    60% {
+        font-size: 8rem;
+    }
+    80% {
+        font-size: 12rem;
+    }
+    100% {
+        font-size: 10rem;
+    }
+}
+
+
+#belowTheOcean {
+    position: relative;
+    min-height: 300vh;
+    background: linear-gradient(to top, $backgroundFond 50%, $backgroundSurface 100%);
+    scroll-snap-align: end;
+    scroll-snap-stop: always;
+}
+
+.fish-container {
+    width: fit-content;
+}
+
+.fish-card {
+    background-image: url("../img/bg/fish.gif");
+    background-repeat: no-repeat;
+    visibility: visible;
+    width: fit-content;
+}
+
+.fish-card-body {
+    min-height: 100px;
+    min-width: 200px;
+    border-radius: 50px;
+    background: $backgroundCarte;
+    width: fit-content;
+    padding: 2vh 2vw;
+    visibility: hidden;
+    color: skyblue;
+}
+
+#groot {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    background-image: url("../img/bg/groot.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+
+#boutonPortrait {
+  margin-left: 10vw;
+  width: 50vw;
+  border-radius: 20px;
+}
+
+#boutonPortrait:hover {
+  scale: 1.2;
+  transition: 2s ease-in-out;
+}
+
+.portrait {
+  height: 100px;
+  width: 100px;
+  border-radius: 100%;
+}
+
+.portraitOnClick {
+  animation: 1s spin ease-in-out;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(360deg) ;
+    scale: 1;
+  }
+  50% {
+    scale: 1.2;
+  }
+  100% {
+    transform: rotate(0deg) ;
+    scale: 1;
+  }
+}
+
+
+#podcastContainer{
+    padding: 5vh 5vw;
+}
+
+
+#fleeButtonTest, #fleeButtonAccepter {
+    transition: transform 0.5s ease, background-color 0.4s ease;
+    position: relative;
+}
+
+.fleeButton::before, .fleeButton::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    width: 5px;
+    height: 20px;
+    background-color: black;
+    border-radius: 2px;
+    animation: leg-move 0.3s infinite;
+    opacity: 0; /* Les jambes commencent invisibles */
+    visibility: hidden; /* Les jambes commencent cachées */
+}
+
+.fleeButton.fleeing::before, .fleeButton.fleeing::after {
+    visibility: visible; /* Afficher les jambes lorsque le bouton fuit */
+    opacity: 1; /* Rendre les jambes visibles */
+}
+
+.fleeButton::before {
+    left: 10px; /* Positionner la jambe gauche */
+}
+
+.fleeButton::after {
+    right: 10px; /* Positionner la jambe droite */
+    animation-delay: 0.15s; /* Décalage pour simuler une marche alternée */
+}
+
+/* Animation des jambes */
+@keyframes leg-move {
+    0%, 100% {
+        transform: rotate(-60deg);
+    }
+    50% {
+        transform: rotate(60deg);
+    }
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    position: relative; /* Permet aux enfants de se déplacer ensemble */
 }
 
 #chatbot {
