@@ -10,12 +10,12 @@ main {
     margin: 10px;
 }
 
-#fleeButtonTest {
+#fleeButtonTest, #fleeButtonAccepter {
     transition: transform 0.5s ease, background-color 0.4s ease;
     position: relative;
 }
 
-#fleeButtonTest::before, #fleeButtonTest::after {
+.fleeButton::before, .fleeButton::after {
     content: '';
     position: absolute;
     bottom: -15px;
@@ -28,16 +28,16 @@ main {
     visibility: hidden; /* Les jambes commencent cachées */
 }
 
-#fleeButtonTest.fleeing::before, #fleeButtonTest.fleeing::after {
+.fleeButton.fleeing::before, .fleeButton.fleeing::after {
     visibility: visible; /* Afficher les jambes lorsque le bouton fuit */
     opacity: 1; /* Rendre les jambes visibles */
 }
 
-#fleeButtonTest::before {
+.fleeButton::before {
     left: 10px; /* Positionner la jambe gauche */
 }
 
-#fleeButtonTest::after {
+.fleeButton::after {
     right: 10px; /* Positionner la jambe droite */
     animation-delay: 0.15s; /* Décalage pour simuler une marche alternée */
 }

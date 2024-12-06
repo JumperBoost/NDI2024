@@ -1,18 +1,19 @@
-const button = document.getElementById("fleeButtonTest");
-const container = button.parentElement;
+const boutonRefuser = document.getElementById("fleeButtonTest");
+const boutonAccepter = document.getElementById("fleeButtonAccepter")
+const container = boutonRefuser.parentElement;
 
 let escapeCount = 0;
 const maxEscapes = Math.random() * 10 + 4;
 console.log(maxEscapes);
 
 
-button.addEventListener("mouseover" || "click", () => {
+boutonRefuser.addEventListener("mouseover" || "click", () => {
     if (escapeCount < maxEscapes) {
         moveButtonWithinContainer();
         escapeCount++;
     } else {
-        button.textContent = "Tu m'as attrapé !";
-        button.style.cursor = "pointer";
+        boutonRefuser.textContent = "C'est bon, j'me rend ! (Refuser)";
+        boutonRefuser.style.cursor = "pointer";
     }
 });
 
@@ -21,23 +22,33 @@ function moveButtonWithinContainer() {
     const containerRect = container.getBoundingClientRect();
 
     // Taille du bouton
-    const buttonWidth = button.offsetWidth;
-    const buttonHeight = button.offsetHeight;
+    const currentRect = boutonRefuser.getBoundingClientRect();
+    const currentX = currentRect.left - containerRect.left;
+    const currentY = (currentRect.top - containerRect.top) -20;
 
-    // Nouvelle position aléatoire relative à la div
-    const newX = Math.random() * (containerRect.width - buttonWidth);
-    const newY = Math.random() * (containerRect.height - buttonHeight);
+    // Nouvelle position aléatoire pour le bouton "Refuser"
+    const newX = Math.random() * (containerRect.width - boutonRefuser.offsetWidth);
+    const newY = Math.random() * (containerRect.height - boutonRefuser.offsetHeight);
+
+    // Déplacer le bouton "Accepter" à l'ancienne position du bouton "Refuser"
+    boutonAccepter.style.transform = `translate(${currentX}px, ${currentY}px)`;
 
     // Rendre les jambes visibles et démarrer l'animation
-    button.classList.add('fleeing'); // Activer la classe qui fait apparaître les jambes
-    button.style.setProperty('visibility', 'visible');
-    button.style.setProperty('opacity', '1'); // Rendre les jambes visibles
+    boutonAccepter.classList.add('fleeing'); // Activer la classe qui fait apparaître les jambes
+    boutonAccepter.style.setProperty('visibility', 'visible');
+    boutonAccepter.style.setProperty('opacity', '1'); // Rendre les jambes visibles
+
+
+    boutonRefuser.classList.add('fleeing'); // Activer la classe qui fait apparaître les jambes
+    boutonRefuser.style.setProperty('visibility', 'visible');
+    boutonRefuser.style.setProperty('opacity', '1'); // Rendre les jambes visibles
 
     // Déplacer le bouton avec la rotation
-    button.style.transform = `translate(${newX}px, ${newY}px)`;
+    boutonRefuser.style.transform = `translate(${newX}px, ${newY}px)`;
 
     // Masquer les jambes après un certain temps (après la fuite)
     setTimeout(() => {
-        button.classList.remove('fleeing'); // Masquer les jambes après la fuite
+        boutonRefuser.classList.remove('fleeing'); // Masquer les jambes après la fuite
+        boutonAccepter.classList.remove('fleeing');
     }, 500); // Durée qui correspond à la durée de la fuite
 }
