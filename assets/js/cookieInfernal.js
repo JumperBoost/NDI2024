@@ -12,14 +12,14 @@ boutonRefuser.addEventListener("mouseover" || "click", () => {
         moveButtonWithinContainer();
         escapeCount++;
     } else {
-        boutonRefuser.textContent = "C'est bon, j'me rend ! (Refuser)";
+        boutonRefuser.textContent = "C'est bon, j'me rend !";
         boutonRefuser.style.cursor = "pointer";
     }
 });
 
 function moveButtonWithinContainer() {
     // Taille de la div parent
-    const containerRect = container.getBoundingClientRect();
+    const containerRect = document.getElementById("rr").getBoundingClientRect()
 
     // Taille du bouton
     const currentRect = boutonRefuser.getBoundingClientRect();
