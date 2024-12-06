@@ -12,23 +12,24 @@ boutonRefuser.addEventListener("mouseover" || "click", () => {
         moveButtonWithinContainer();
         escapeCount++;
     } else {
-        boutonRefuser.textContent = "C'est bon, j'me rend !";
+        boutonRefuser.textContent = "C'est bon, j'me rend ! (Accepter)";
         boutonRefuser.style.cursor = "pointer";
     }
 });
 
 function moveButtonWithinContainer() {
     // Taille de la div parent
-    const containerRect = document.getElementById("rr").getBoundingClientRect()
+    const containerRectRR = document.getElementById("rr").getBoundingClientRect()
 
+    const containerRect = container.getBoundingClientRect();
     // Taille du bouton
     const currentRect = boutonRefuser.getBoundingClientRect();
     const currentX = currentRect.left - containerRect.left;
     const currentY = (currentRect.top - containerRect.top) -20;
 
     // Nouvelle position aléatoire pour le bouton "Refuser"
-    const newX = Math.random() * (containerRect.width - boutonRefuser.offsetWidth);
-    const newY = Math.random() * (containerRect.height - boutonRefuser.offsetHeight);
+    const newX = Math.random() * (containerRectRR.width - boutonRefuser.offsetWidth);
+    const newY = Math.random() * (containerRectRR.height - boutonRefuser.offsetHeight);
 
     // Déplacer le bouton "Accepter" à l'ancienne position du bouton "Refuser"
     boutonAccepter.style.transform = `translate(${currentX}px, ${currentY}px)`;
