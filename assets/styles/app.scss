@@ -5,9 +5,9 @@
     src: url("../font/Salty Ocean.ttf");
 }
 
-$backgroundSurface : #45459d;
-$backgroundFond : #19194c;
-$backgroundCarte : rgba(114, 200, 255, 0.82);
+$backgroundSurface : rgba(69, 69, 157, 0.8);
+$backgroundFond : rgba(25, 25, 76, 0.82);
+$backgroundCarte : rgba(0, 0, 0, 0.66);
 
 body{
     font-size: 18px;
@@ -20,7 +20,6 @@ html, body {
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
     scroll-padding-top: 10vh;
-    overflow-x: hidden;
 }
 
 header {
@@ -74,6 +73,7 @@ footer {
     background-size: cover;
     scroll-snap-align: start;
     scroll-snap-stop: always;
+    overflow: hidden;
 }
 
 #title {
@@ -124,18 +124,45 @@ footer {
 
 #belowTheOcean {
     position: relative;
-    min-height: 100vh;
+    min-height: 300vh;
     background: linear-gradient(to top, $backgroundFond 50%, $backgroundSurface 100%);
     scroll-snap-align: end;
     scroll-snap-stop: always;
-
 }
 
-.fish-card{
+.fish-container {
+    width: fit-content;
+}
+
+.fish-card {
+    background-image: url("../img/bg/fish.gif");
+    background-repeat: no-repeat;
+    visibility: visible;
+    width: fit-content;
+}
+
+.fish-card-body {
+    min-height: 100px;
+    min-width: 200px;
     border-radius: 50px;
     background: $backgroundCarte;
     width: fit-content;
     padding: 2vh 2vw;
+    visibility: hidden;
+    color: skyblue;
+}
+
+#groot {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    background-image: url("../img/bg/groot.png");
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
 

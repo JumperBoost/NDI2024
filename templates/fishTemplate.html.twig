@@ -1,8 +1,22 @@
-<div class="fish-container">
+<div class="fish-container" onclick="onClickFish()">
     <div class="fish-card">
-        <h3 class="fish-card-title">Fact One</h3>
         <div class="fish-card-body">
+            <h3 class="fish-card-title"></h3>
             This is a fish card body
         </div>
     </div>
+    <script>
+        const fishCard = document.getElementsByClassName("fish-card")[0];
+        const fishCardBody = document.getElementsByClassName("fish-card-body")[0];
+        function onClickFish() {
+            if (fishCard.style.visibility !== "hidden") {
+                fishCard.style.visibility = "hidden";
+                fishCardBody.style.visibility = "visible";
+            } else {
+                fishCard.style.visibility = "visible";
+                fishCardBody.style.visibility = "hidden";
+            }
+        }
+    </script>
 </div>
+

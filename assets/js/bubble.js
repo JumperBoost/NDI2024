@@ -34,7 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // Increment score and update display
             score++;
-            document.getElementById("score-counter").textContent = `Score: ${score}`;
         });
     }
 });

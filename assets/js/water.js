@@ -66,7 +66,7 @@ Ripple.prototype = {
 const canvas = document.querySelector('#canvas');
 const ctx = canvas.getContext('2d');
 const ripples = [];
-const container = document.getElementById("belowTheOcean");
+const container = document.getElementById("aboveTheOcean");
 const height = container.clientHeight;
 const width = container.clientWidth;
 
