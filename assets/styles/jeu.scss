@@ -1,0 +1,42 @@
+body {
+    background-image: url("../img/spriteEAU.gif");
+    background-repeat: repeat;
+    cursor: none;
+    margin: 0;
+    min-height: 100vh;
+    min-width: 100vh;
+    overflow: hidden;
+}
+
+#bateau {
+    z-index: 1;
+    max-height: 10%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    transition: 1.5s ease-out;
+}
+
+.canette {
+    background-image: url("../img/canette.png");
+    height: 60px;
+    width:60px;
+    scale:0.7;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+
+.sprite {
+    background-image: url("../img/Sprite-0016.gif");
+    background-repeat: no-repeat;
+    height: 60px;
+    width:60px;
+    position: absolute;
+}
+
+.fish {
+    background-image: url("../img/poisson.gif");
+    background-repeat: no-repeat;
+    height: 180px;
+    width:180px;
+    position: absolute;
+}
