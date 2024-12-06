@@ -1,8 +1,9 @@
 let myDiv = document.getElementById("bateau");
-const nbCanettes = 1;
+const nbCanettes = 10;
 let score = 0;
 
-const container = document.getElementById("container")
+const container = document.getElementById("container");
+const wootah = document.getElementById("wootah");
 function createDechet() {
     const dechet = document.createElement("div");
     dechet.style.left = Math.round(Math.random() * 100) + "%"; // Random horizontal start
@@ -78,7 +79,8 @@ function handleCollisions() {
 setInterval(handleCollisions, 50);
 
 function aGagne(){
-    alert("Vous avez gagné ! Vous avez ramassé un total de " + nbCanettes + " canettes")
+    alert("Vous avez gagné ! Vous avez ramassé un total de " + nbCanettes + " canettes");
+    wootah.style.display = "block";
 }
 
 function createSprite(containerSprite){
