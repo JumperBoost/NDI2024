@@ -34,7 +34,7 @@ class MainController extends AbstractController {
     }
 
     #[Route('/jeu')]
-    public function jeu(): Response {
+    public function jeuBateu(): Response {
         return $this->render('jeu.html.twig');
     }
 }
