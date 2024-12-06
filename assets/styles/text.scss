@@ -1,0 +1,22 @@
+#containerText {
+  padding: 20px;
+  margin: 20px;
+  border: solid #3b82f6;
+  border-radius: 10px;
+  scroll-snap-stop: always;
+  scroll-snap-align: end;
+}
+
+h3 {
+  color: #3b82f6;
+}
+
+ul {
+  margin : 20px;
+  list-style-type: none;
+  text-align: justify;
+}
+
+li {
+  margin: 10px;
+}
