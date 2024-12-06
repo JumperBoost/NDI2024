@@ -3,7 +3,7 @@
 {% block titre %}Page d'accueil — Nuit de l'info 2024{% endblock %}
 
 {% block body %}
-    <div class="d-flex flex-column gap-3">
+    <div id="podcastContainer" class="container d-flex flex-column gap-3">
         <div>
             <img class="portrait" onclick='spin(this)' src="{{ asset('img/podcast/Sevellec.png') }}" alt="Portrait de Florian SÉVELLEC">
             <a onclick="spin(this)" id="boutonPortrait" type="button" class="btn btn-primary" href="/podcastEpisode1">Episode 1 : INTERVIEW FLORIAN SÉVELLEC</a>

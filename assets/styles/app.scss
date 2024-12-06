@@ -13,6 +13,12 @@ body{
     font-size: 18px;
 }
 
+main{
+    min-height: 90vh;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
 html, body {
     width: 100% !important;
     height: fit-content;
@@ -45,6 +51,10 @@ footer {
 
 .navbar {
     height: 10vh;
+}
+
+.navbar-brand {
+    color: skyblue;
 }
 
 #wrapper {
@@ -199,4 +209,9 @@ footer {
     transform: rotate(0deg) ;
     scale: 1;
   }
+}
+
+
+#podcastContainer{
+    padding: 5vh 5vw;
 }
