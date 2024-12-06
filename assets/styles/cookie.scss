@@ -2,13 +2,13 @@ $bg: #333;
 
 :root {
   font-size: 20px;
-  font-family: 'Chivo';
+  font-family: 'Chivo', Arial, sans-serif;
 }
 
 h1 {
   position: absolute;
+  padding-top: 20vh;
   top:0;
-  left: 0;
   left: auto;
   font-size: 40px;
   text-align: center;
@@ -18,12 +18,14 @@ h1 {
   background-clip: text;
 }
 
-body {
+main {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   background: $bg;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 #container { position: relative; }
@@ -136,8 +138,7 @@ input[type='text']:focus {
   background: inherit;
   border-radius: 100px;
   box-shadow: 0 0 12px rgba(#424242, 1);
-
-  transition: all 0.3s background 0.4s 0.1s;
+  transition: all 0.3s;
   transform: translate(-50%, 50px);
   z-index: -1;
 }
