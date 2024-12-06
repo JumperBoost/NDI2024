@@ -4,8 +4,8 @@
         <meta charset="UTF-8">
         <title>{% block title %}Nuit de l'info 2024{% endblock %}</title>
         <link rel="stylesheet" href="{{ asset('styles/app.css') }}">
+        <script src="{{ asset('js/jquery-3.7.1.min.js') }}"></script>
         {% block stylesheets %}{% endblock %}
-        {% block javascripts %}{% endblock %}
     </head>
     <body>
         <header>
@@ -13,9 +13,32 @@
         </header>
         <main>
             {% block body %}{% endblock %}
+            <div id="chatbot" class="container row flex-column align-items-center">
+                <div id="chatbot-img">
+                    <img src="{{ asset('img/attendre.gif') }}">
+                </div>
+                <div class="d-flex align-items-center">
+                    <h2 class="margin-none">Assistant chat</h2>
+                    <div id="chatbot-status" class="label-red">Non connecté</div>
+                </div>
+                <div id="chatbot-msg"></div>
+                <div id="chatbot-inputs" class="d-flex align-items-center">
+                    <textarea placeholder="Entrez votre question" disabled></textarea>
+                    <input type="submit" value="" alt="Envoyer" onclick="envoyerPromptChatbot()" disabled>
+                </div>
+            </div>
+            <div id="chatbot-visibility-btn" onclick="derouler()">
+                <input type="checkbox" alt="Dérouler le chatbot" disabled>
+                <label>
+                    <img src="{{ asset('img/icons/chevron_icon.svg') }}" alt="Image déroulement chatbot">
+                </label>
+            </div>
         </main>
         <footer>
 
         </footer>
     </body>
+    {% block javascripts %}
+        <script src="{{ asset('js/chatbox.js') }}"></script>
+    {% endblock %}
 </html>

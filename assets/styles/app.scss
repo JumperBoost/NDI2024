@@ -9,3 +9,132 @@ body {
 main {
     margin: 10px;
 }
+
+#chatbot {
+    position: fixed;
+    padding: 10px 0;
+    right: -450px;
+    bottom: 50px;
+    background-color: #27272a;
+    color: white;
+    max-width: 430px;
+    transition: all 1s ease-out;
+    &.deroule {
+        right: 10px;
+    }
+}
+
+#chatbot-status {
+    margin-left: auto;
+    margin-right: 5px;
+}
+
+#chatbot-img {
+    position: absolute;
+    top: -150px;
+}
+
+#chatbot-img > img {
+    height: 150px;
+
+}
+
+.label-green {
+    background-color: green;
+    padding: 3px 5px;
+    border-radius: 10px;
+}
+
+.label-red {
+    background-color: red;
+    padding: 3px 5px;
+    border-radius: 10px;
+}
+
+.margin-none {
+    margin: 0;
+}
+
+.mw-25 { max-width: 25% }
+
+.mw-75 { max-width: 75% }
+
+#chatbot-msg {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    width: 95%;
+    padding: 5px;
+    margin: 10px;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    line-break: auto;
+    gap: 8px;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: white transparent;
+}
+
+#chatbot-msg > div {
+    padding: 3px 10px;
+    border-radius: 5px;
+    max-width: 80%;
+    width: fit-content;
+}
+
+.chatbot-msg-server {
+    background-color: #3b82f6;
+    margin-right: auto;
+}
+
+.chatbot-msg-client {
+    background-color: #71717a;
+    margin-left: auto;
+}
+
+#chatbot-inputs {
+    width: 90%;
+    gap: 10px;
+}
+
+#chatbot-inputs > textarea {
+    overflow: hidden;
+    resize: none;
+    width: 100%;
+}
+
+#chatbot-inputs > input[type='submit'] {
+    background-image: url("../img/icons/send_icon.svg");
+    background-size: 100% 100%;
+    width: 15%;
+}
+
+#chatbot-visibility-btn {
+    position: fixed;
+    height: fit-content;
+    width: fit-content;
+    bottom: 10px;
+    right: 10px;
+}
+
+#chatbot-visibility-btn > input[type='checkbox'] {
+    display: none;
+    position: absolute;
+    width: 30px;
+}
+
+#chatbot-visibility-btn > input[type='checkbox'] + label {
+    cursor: pointer;
+    display: block;
+}
+
+#chatbot-visibility-btn > input[type='checkbox'] + label img {
+    background-image: url("../img/icons/chevron_icon.svg");
+    height: 30px;
+    transition: all 1s ease-out;
+}
+
+#chatbot-visibility-btn > input[type='checkbox']:checked + label img {
+    rotate: 180deg;
+    transition: all 1s ease-out;
+}
