@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block titre %}Page d'accueil — Nuit de l'info 2024{% endblock %}
+
+{% block body %}
+    <div class="d-flex flex-column gap-3">
+        <div>
+            <img class="portrait" onclick='spin(this)' src="{{ asset('img/podcast/Sevellec.png') }}" alt="Portrait de Florian SÉVELLEC">
+            <a onclick="spin(this)" id="boutonPortrait" type="button" class="btn btn-primary" href="/podcastEpisode1">Episode 1 : INTERVIEW FLORIAN SÉVELLEC</a>
+        </div>
+        <div>
+            <img onclick="spin(this)" class="portrait" src="{{ asset('img/podcast/LeMoigne.png') }}" alt="Portrait de Frédéric LE MOIGNE">
+            <a onclick="spin(this)" id="boutonPortrait" type="button" class="btn btn-primary" href="/podcastEpisode2">Episode 2 : INTERVIEW FREDERIC LE MOIGNE</a>
+        </div>
+    </div>
+    <script>
+        function spin(element) {
+            if (!element.classList.contains("portraitOnClick")) {
+                element.classList.add("portraitOnClick");
+                setTimeout(function () {element.classList.remove("portraitOnClick")}, 1000);
+                console.log(element);
+            }
+        }
+    </script>
+{% endblock %}

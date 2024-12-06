@@ -166,3 +166,37 @@ footer {
 }
 
 
+#boutonPortrait {
+  margin-left: 10vw;
+  width: 50vw;
+  border-radius: 20px;
+}
+
+#boutonPortrait:hover {
+  scale: 1.2;
+  transition: 2s ease-in-out;
+}
+
+.portrait {
+  height: 100px;
+  width: 100px;
+  border-radius: 100%;
+}
+
+.portraitOnClick {
+  animation: 1s spin ease-in-out;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(360deg) ;
+    scale: 1;
+  }
+  50% {
+    scale: 1.2;
+  }
+  100% {
+    transform: rotate(0deg) ;
+    scale: 1;
+  }
+}
