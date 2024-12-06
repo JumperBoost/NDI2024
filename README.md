@@ -12,12 +12,12 @@
 >8. [Membres de l'équipe](#membres-de-léquipe)
 
 # Défis
-- xx
-- xx
-- xx
-- xx
-- xx
-- xx
+- [Défi de la nuit 2024](https://www.nuitdelinfo.com/inscription/defis/174)
+- [Cookie Cauchemar](https://www.nuitdelinfo.com/inscription/defis/430)
+- [L'ergonomie : simplifier pour mieux vivre](https://www.nuitdelinfo.com/inscription/defis/444)
+- [L'île aux singes 2.0 : Guide interactif pour pirates en herbe](https://www.nuitdelinfo.com/inscription/defis/432)
+- [On va jouer à un jeu 🪚](https://www.nuitdelinfo.com/inscription/defis/434)
+- [On veut du gros pixel ! ✨🎮👾🕹️](https://www.nuitdelinfo.com/inscription/defis/453)
 
 # Prérequis d'utilisation
 - **PHP** 8.3.x
