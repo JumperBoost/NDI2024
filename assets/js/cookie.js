@@ -66,7 +66,8 @@ const liste = ["Quel est le point commun entre la transpiration et l'évaporatio
                         "Quel est le point commun entre les cheveux et les algues ?",
                         "Quel est le point commun entre la salive et l'eau douce ?",
                         "Quel est le point commun entre les glandes sudoripares et les sources d'eau ?",
-                        "Quel est le point commun entre les globules blancs et les organismes filtrants dans l'eau ?"
+                        "Quel est le point commun entre les globules blancs et les organismes filtrants dans l'eau ?",
+                        "Quel est le nom du 7ème continent ?"
                         ];
 
 function generateH1(){
