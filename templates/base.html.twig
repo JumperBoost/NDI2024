@@ -4,18 +4,28 @@
         <meta charset="UTF-8">
         <title>{% block title %}Nuit de l'info 2024{% endblock %}</title>
         <link rel="stylesheet" href="{{ asset('styles/app.css') }}">
+        <link rel="stylesheet" href="{{ asset('styles/bubble.css') }}">
         {% block stylesheets %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </head>
     <body>
         <header>
-
+            {% block navbar %}
+                {% include 'navbar.html.twig' %}
+            {% endblock %}
         </header>
         <main>
-            {% block body %}{% endblock %}
+            {% block body %}
+                {% block body2 %}{% endblock %}
+            {% endblock %}
         </main>
         <footer>
+            {% block footer %}
 
+            {% endblock %}
         </footer>
     </body>
+    <script src="{{ asset('js/water.js') }}"></script>
+    <script src="{{ asset('js/background.js') }}"></script>
+    <script src="{{ asset('js/bubble.js') }}"></script>
 </html>

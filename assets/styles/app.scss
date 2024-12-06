@@ -1,11 +1,141 @@
 // Bootstrap
 @import "../../vendor/twbs/bootstrap/scss/bootstrap";
+@font-face {
+    font-family: Salty Ocean;
+    src: url("../font/Salty Ocean.ttf");
+}
 
-body {
-    background-color: skyblue;
+$backgroundSurface : #45459d;
+$backgroundFond : #19194c;
+$backgroundCarte : rgba(114, 200, 255, 0.82);
+
+body{
     font-size: 18px;
 }
 
-main {
-    margin: 10px;
+html, body {
+    width: 100% !important;
+    height: fit-content;
+    margin: 0;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    scroll-padding-top: 10vh;
+    overflow-x: hidden;
 }
+
+header {
+    height: fit-content;
+    z-index: 3;
+    position: sticky;
+    top: 0;
+}
+
+footer {
+    height: 10vh;
+    background-color: black;
+    scroll-snap-align: end;
+}
+
+#canvas {
+    width: 100% !important;
+    height: 100% !important;
+    position: absolute;
+    margin: 0;
+}
+
+
+.navbar {
+    height: 10vh;
+}
+
+#wrapper {
+    position: absolute;
+    top: 0;
+    pointer-events: none;
+}
+
+#menu {
+    width: 100%;
+}
+
+
+#containerAbove {
+    position: relative;
+    height: 90vh;
+}
+
+
+#aboveTheOcean {
+    height: 100%;
+    background-image: url("../img/bg/Horizon.jpeg");
+    background-position: center center;
+    filter: blur(0px);
+    transition: all 2s ease-in-out;
+    background-size: cover;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
+#title {
+    display: block;
+    border-radius: 100px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    align-content: center;
+    font-size: 12rem;
+    background: -webkit-linear-gradient(#c24444, #1949cc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: "Salty Ocean", Arial, sans-serif;
+    z-index: -1;
+    transition: 0.5s ease-in-out;
+}
+
+#title {
+    animation: 2s titleDance linear infinite;
+}
+
+@keyframes titleDance {
+    0% {
+        font-size: 10rem;
+    }
+    20% {
+        font-size: 12rem;
+    }
+    40% {
+        font-size: 10rem;
+    }
+    60% {
+        font-size: 8rem;
+    }
+    80% {
+        font-size: 12rem;
+    }
+    100% {
+        font-size: 10rem;
+    }
+}
+
+
+#belowTheOcean {
+    position: relative;
+    min-height: 100vh;
+    background: linear-gradient(to top, $backgroundFond 50%, $backgroundSurface 100%);
+    scroll-snap-align: end;
+    scroll-snap-stop: always;
+
+}
+
+.fish-card{
+    border-radius: 50px;
+    background: $backgroundCarte;
+    width: fit-content;
+    padding: 2vh 2vw;
+}
+
+

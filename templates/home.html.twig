@@ -1,7 +1,26 @@
+
+
 {% extends 'base.html.twig' %}
 
 {% block titre %}Page d'accueil — Nuit de l'info 2024{% endblock %}
 
 {% block body %}
-    <p>Hello, World!</p>
+    <div id="containerAbove">
+        <div id="aboveTheOcean">
+            <canvas id="canvas">
+
+            </canvas>
+            <div id="title">
+                <h1 id="title">Ocean</h1>
+            </div>
+        </div>
+        <div id="wrapper"></div>
+
+    </div>
+
+    <div id="belowTheOcean" class="justify-content-center flex-column">
+        <div id="bubble-container">
+
+        </div>
+    </div>
 {% endblock %}
