@@ -1,5 +1,5 @@
 let myDiv = document.getElementById("bateau");
-const nbCanettes = 80;
+const nbCanettes = 1;
 let score = 0;
 
 const container = document.getElementById("container")
@@ -65,9 +65,9 @@ function handleCollisions() {
         if (checkCollision(bateau, canette)) {
             canette.remove(); // Supprimer la canette qui entre en collision
             score++;
-            console.log(score);
-            if (score === 80){
+            if (score === nbCanettes){
                 createSprites();
+                createFishes();
                 aGagne();
             }
         }
@@ -91,8 +91,24 @@ function createSprite(containerSprite){
 
 function createSprites() {
     const containerSprite = document.getElementById("container-sprite");
-    console.log("createSprites appelé")
     while (containerSprite.children.length < 10) {
         createSprite(containerSprite);
     }
 }
+let timeout = 1400
+function createFish(containerFish){
+    const fish = document.createElement("div");
+    fish.style.left = Math.round(Math.random() * 100) + "%"; // Random horizontal start
+    fish.style.top = Math.round(Math.random() * 100) + "%"; // Set random X for translation
+    fish.classList.add("fish");
+    containerFish.appendChild(fish);
+    setTimeout(() => fish.remove(), timeout);
+}
+function createFishes(){
+    const containerFish = document.getElementById("container-fish");
+    setInterval(() => {
+        createFish(containerFish);
+    }, 100)
+
+}
+
