@@ -56,3 +56,21 @@ input.onkeydown = (e) => {
         }, 300);
     }
 };
+
+const liste = ["Quel est le point commun entre la transpiration et l'évaporation ?",
+                        "Quel est le point commun entre la digestion des aliments et la décomposition des matières organiques dans l'eau ?",
+                        "Quel est le point commun entre la respiration et l'aération de l'eau dans un aquarium ?",
+                        "Quel est le point commun entre la circulation sanguine et le cycle de l'eau dans la nature ?",
+                        "Quel est le point commun entre le rythme cardiaque et le flux et reflux des marées ?",
+                        "Quel est le point commun entre les nerfs et les ondes à la surface de l'eau ?",
+                        "Quel est le point commun entre les cheveux et les algues ?",
+                        "Quel est le point commun entre la salive et l'eau douce ?",
+                        "Quel est le point commun entre les glandes sudoripares et les sources d'eau ?",
+                        "Quel est le point commun entre les globules blancs et les organismes filtrants dans l'eau ?"
+                        ];
+
+function generateH1(){
+    let random = generateRandomChance();
+    document.getElementById("h1").innerHTML = liste[random];
+}
+generateH1();

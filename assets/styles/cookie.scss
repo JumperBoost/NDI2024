@@ -5,6 +5,19 @@ $bg: #333;
   font-family: 'Chivo';
 }
 
+h1 {
+  position: absolute;
+  top:0;
+  left: 0;
+  left: auto;
+  font-size: 40px;
+  text-align: center;
+  font-weight: 600;
+  background-color: white;
+  color:transparent;
+  background-clip: text;
+}
+
 body {
   height: 100vh;
   display: flex;
